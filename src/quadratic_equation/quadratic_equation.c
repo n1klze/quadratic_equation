@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <math.h>
 
-#include "../utils/utils.h"
+#include "utils/utils.h"
 
 //bx + c = 0
 solution_t solve_linear(double b, double c) {
