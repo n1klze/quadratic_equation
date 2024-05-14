@@ -3,9 +3,9 @@
 
 #include <stdio.h>
 
-void __handler__init_testing();
-void __handler_update_test_count();
-void __handler_sum_up();
+void handler__init_testing();
+void handler_update_test_count();
+void handler_sum_up();
 void __handler_assert_true(int condition, const char *condition_str);
 
 #define ASSERT_TRUE(condition) \

@@ -14,15 +14,15 @@ typedef struct tests_counter_s {
 
 static tests_counter_t __tests_counter;
 
-void __handler__init_testing() {
+void handler__init_testing() {
     __tests_counter.total_count    = 0;
     __tests_counter.failure_count  = 0;
     __tests_counter.current_status = TEST_NOT_STARTED;
-    
+
     printf("== Running tests ==\n");
 }
 
-void __handler_update_test_count() {
+void handler_update_test_count() {
     ++__tests_counter.total_count;
 
     if (__tests_counter.current_status == TEST_FAILURE){
@@ -32,7 +32,7 @@ void __handler_update_test_count() {
     }
 }
 
-void __handler_sum_up() {
+void handler_sum_up() {
     if (__tests_counter.failure_count) {
         printf(">> Failed %d tests of %d\n",
             __tests_counter.failure_count, 

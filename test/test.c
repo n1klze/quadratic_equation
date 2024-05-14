@@ -16,11 +16,11 @@ int run_all_tests() {
 
     tests = fopen(TEST_CASES_PATH, "r");
     if (tests == NULL) {
-        perror("fopen");
+        perror("fopen()");
         return errno;
     }
 
-    __handler__init_testing();
+    handler__init_testing();
 
     while (fgets(buffer, sizeof(buffer), tests)) {
         if (sscanf(buffer, "%le %le %le | %d | %le %le", 
@@ -29,11 +29,11 @@ int run_all_tests() {
             ASSERT_EQUAL(nroots, ans.nroots, "%d");
             for (int i = 0; i < nroots; ++i)
                 ASSERT_EQUAL(roots[i], ans.roots[i], "%le");
-            __handler_update_test_count();
+            handler_update_test_count();
         }
     }
 
-    __handler_sum_up();
+    handler_sum_up();
 
     fclose(tests);
     return EXIT_SUCCESS;
@@ -44,7 +44,7 @@ int main() {
     
     ret = run_all_tests();
     if (ret)
-        printf("Error when running tests: %d\n", ret);
+        fprintf(stderr, "Error when running tests: %d\n", ret);
 
     return ret;
 }
