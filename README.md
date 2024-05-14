@@ -12,7 +12,7 @@
 2. Сгенерируйте файлы сборки
     ```
     mkdir build && cd build
-    cmake -CMAKE_BUILD_TYPE=Release ..
+    cmake -DCMAKE_BUILD_TYPE=Release ..
     ```
 3. Соберите проект
     ```
