@@ -1,7 +1,7 @@
-#ifndef QUADRATIC_EQUATION_H
-#define QUADRATIC_EQUATION_H
+#ifndef QUADRATIC_EQUATION_H_
+#define QUADRATIC_EQUATION_H_
 
-enum RootsNumber {
+enum roots_number {
     INF_ROOTS   = -1,
     NO_ROOTS    =  0,
     SINGLE_ROOT =  1,
@@ -9,10 +9,10 @@ enum RootsNumber {
 };
 
 typedef struct solution_s {
-    enum RootsNumber nroots;
-    double roots[2];
+    enum roots_number nroots;
+    double            roots[2];
 } solution_t;
 
 solution_t solve_equation(double a, double b, double c);
 
-#endif //QUADRATIC_EQUATION_H
+#endif  // QUADRATIC_EQUATION_H_

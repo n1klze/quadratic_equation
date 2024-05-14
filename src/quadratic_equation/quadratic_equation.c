@@ -24,16 +24,19 @@ solution_t solve_linear(double b, double c) {
 // ax^2 + bx + c = 0
 solution_t solve_equation(double a, double b, double c) {
     solution_t result;
+    double     discriminant;
+    int        discriminant_sign;
 
     if (!isfinite(a) || !isfinite(b) || !isfinite(c)) {
         errno = EINVAL;
+        return result;
     }
 
     if (doublecmp(a, 0) == 0) 
         return solve_linear(b, c);
 
-    double discriminant = b * b - 4 * a * c;
-    int discriminant_sign = doublecmp(discriminant, 0);
+    discriminant = b * b - 4 * a * c;
+    discriminant_sign = doublecmp(discriminant, 0);
 
     if (discriminant_sign < 0) {
         result.nroots = NO_ROOTS;

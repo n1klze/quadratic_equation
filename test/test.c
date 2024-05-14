@@ -40,7 +40,11 @@ int run_all_tests() {
 }
 
 int main() {
-    int ret = run_all_tests();
+    int ret;
+    
+    ret = run_all_tests();
+    if (ret)
+        printf("Error when running tests: %d\n", ret);
 
     return ret;
 }

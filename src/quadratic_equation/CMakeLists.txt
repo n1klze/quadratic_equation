@@ -4,5 +4,5 @@ target_include_directories(quadratic_equation PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(quadratic_equation  PRIVATE 
-                    m
-                    utils)
+                      m
+                      utils)
